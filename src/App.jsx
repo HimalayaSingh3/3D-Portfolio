@@ -6,10 +6,7 @@ const App = () => {
   return (
     <BrowserRouter>
       <div className='relative z-0 bg-primary'>
-<<<<<<< HEAD
       <StarsCanvas />
-=======
->>>>>>> 9db32e55d0ce6e1bd473593b276d3459488edc73
         <div>
           <Navbar />
           <Hero />
