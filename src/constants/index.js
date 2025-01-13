@@ -11,6 +11,9 @@ import {
   css,
   logo,
   reactjs,
+  portfolio,
+  notes,
+  todo,
   redux,
   tailwind,
   nodejs,
@@ -55,7 +58,7 @@ const services = [
     icon: backend,
   },
   {
-    title: "Editing",
+    title: "UI/UX Design",
     icon: creator,
   },
 ];
@@ -142,44 +145,41 @@ const experiences = [
       "Designed a 3D interactive portfolio using Three.js and React Three Fiber, optimizing performance and enhancing user experience with animations using GSAP.",
     ],
   },
-  
 ];
-
 
 const projects = [
   {
-    name: "Pet Scheduler",
-    description:
-      "Not Available",
+    name: "SAAS AI Form Generator",
+    description: "Build a SaaS AI Form Generator that allows users to create custom forms by leveraging OpenAI's GPT-3 to automatically generate form questions based on user input. Users can specify form details (e.g., survey, feedback, registration form), and the app will generate relevant fields and questions for the form. The platform will offer user authentication through Clerk, backend storage with Supabase and Prisma, and a modern UI with Tailwind CSS and ShadCN UI.",
     tags: [
       {
         name: "react",
         color: "blue-text-gradient",
       },
       {
-        name: "mongodb",
+        name: "clerk",
         color: "green-text-gradient",
       },
       {
-        name: "tailwind",
+        name: "prisma",
         color: "pink-text-gradient",
       },
       {
-        name: "express",
-        color: "orange-text-gradient",
-      },
-      {
-        name: "node",
+        name: "tailwind",
         color: "white-text-gradient",
       },
+      {
+        name: "shadcn ui",
+        color: "orange-text-gradient",
+      },
     ],
-    image: carrent,
+    image: jobit,
     source_code_link: "https://github.com/",
   },
   {
     name: "Phone No Manager",
     description:
-      "Not Available",
+      "Create a Phone Number Manager app using Clerk for authentication, Supabase for database management, and React for building the frontend, styled with Tailwind CSS, ShadCN UI, and Material-UI (MUI). This app allows users to securely save, manage, and organize their phone numbers with an intuitive interface.",
     tags: [
       {
         name: "react",
@@ -206,92 +206,187 @@ const projects = [
     source_code_link: "https://github.com/",
   },
   {
-    name: "Password Manager",
+    name: "Full Stack Link Saver",
     description:
-      "Not Available",
-    tags: [
-      {
-        name: "nextjs",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "supabase",
-        color: "green-text-gradient",
-      },
-      {
-        name: "css",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: tripguide,
-    source_code_link: "https://github.com/",
-  },
-  {
-    name: "To Do List App",
-    description:
-      "Not Available",
-    tags: [
-      {
-        name: "nextjs",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "supabase",
-        color: "green-text-gradient",
-      },
-      {
-        name: "css",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: tripguide,
-    source_code_link: "https://github.com/",
-  },
-  {
-    name: "Notes Manager",
-    description:
-      "Not Available",
-    tags: [
-      {
-        name: "nextjs",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "supabase",
-        color: "green-text-gradient",
-      },
-      {
-        name: "css",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: tripguide,
-    source_code_link: "https://github.com/",
-  },
-  {
-    name: "3D Portfolio",
-    description:
-      "Not Available",
+      "Create a Full-Stack Link Saver using the MERN stack (MongoDB, Express.js, React, and Node.js) without authentication. This app will allow users to save and manage their favorite links, with features like tagging, searching, and organizing.",
     tags: [
       {
         name: "react",
         color: "blue-text-gradient",
       },
       {
-        name: "three js",
+        name: "node",
+        color: "green-text-gradient",
+      },
+      {
+        name: "mongo",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "tailwind",
+        color: "white-text-gradient",
+      },
+      {
+        name: "express",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "shadcn ui",
+        color: "orange-text-gradient",
+      },
+    ],
+    image: jobit,
+    source_code_link:
+      "https://github.com/HimalayaSingh3/MERN-Stack-Link-Saver-App",
+  },
+  {
+    name: "Personal Landing Page Generator",
+    description:
+      "Develop a Personal Landing Page Generator using React and Tailwind CSS. This tool enables users to quickly create and customize a personal or professional landing page by inputting their details. The app generates a responsive and elegant landing page that users can preview and export.",
+    tags: [
+      {
+        name: "react",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "tailwind",
         color: "green-text-gradient",
       },
       {
         name: "css",
         color: "pink-text-gradient",
       },
+    ],
+    image: jobit,
+    source_code_link:
+      "https://github.com/HimalayaSingh3/Personal-Landing-Page-Generator",
+  },
+  {
+    name: "Readme Generator",
+    description:
+      "Build a README Generator using React and Tailwind CSS to streamline the creation of professional and visually appealing README files for GitHub projects. The app allows users to input project details through an interactive form and generates a Markdown file that can be downloaded and used directly.",
+    tags: [
       {
-        name: "framer",
+        name: "react",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "tailwind",
+        color: "green-text-gradient",
+      },
+      {
+        name: "css",
         color: "pink-text-gradient",
+      },
+    ],
+    image: jobit,
+    source_code_link: "https://github.com/HimalayaSingh3/Readme-Generator",
+  },
+  {
+    name: "Video Conference App",
+    description:
+      "Create a Video Conference App using React and ZEGOCLOUD that enables users to join and host video calls, with features such as screen sharing, real-time messaging, and multiple participants. This app can be used for meetings, online classes, or virtual events, providing a seamless and scalable video conferencing experience.",
+    tags: [
+      {
+        name: "react",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "zegocloud",
+        color: "green-text-gradient",
+      },
+      {
+        name: "css",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: jobit,
+    source_code_link: "https://github.com/HimalayaSingh3/Video-Conference-App",
+  },
+  {
+    name: "Discussio Chat App",
+    description: "Build a Chat App using Next.js, Clerk for authentication, and Stream for real-time messaging. This app will provide an interactive, secure, and seamless chat experience with user authentication, private and group chat features, and real-time message synchronization.",
+    tags: [
+      {
+        name: "nextjs",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "clerk",
+        color: "green-text-gradient",
+      },
+      {
+        name: "tailwind",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "stream",
+        color: "white-text-gradient",
       },
     ],
     image: tripguide,
     source_code_link: "https://github.com/",
+  },
+  {
+    name: "ToDoism App",
+    description: "Build a To-Do List app using React for the frontend, Clerk for authentication, Supabase for backend data storage, Prisma as the ORM, and ShadCN UI along with Tailwind CSS for styling. This app will allow users to create, view, update, and delete tasks, while ensuring secure access and an intuitive user interface.",
+    tags: [
+      {
+        name: "react",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "supabase",
+        color: "green-text-gradient",
+      },
+      {
+        name: "tailwind",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "shadcn",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "prisma",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "clerk",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: todo,
+    source_code_link: "https://github.com/",
+  },
+  {
+    name: "Notes Manager",
+    description: "Create a Notes Manager app using the MERN stack (MongoDB, Express.js, React, Node.js) that allows users to create, organize, and manage their notes in a user-friendly interface. The app supports features like creating, editing, deleting, categorizing, and searching notes, making it a powerful tool for personal or work-related note-taking.",
+    tags: [
+      {
+        name: "react",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "express",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "node",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "mongodb",
+        color: "green-text-gradient",
+      },
+      {
+        name: "tailwind",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: notes,
+    source_code_link:
+      "https://github.com/HimalayaSingh3/Full-Stack-Notes-Manager",
   },
 ];
 

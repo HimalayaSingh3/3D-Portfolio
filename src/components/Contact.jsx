@@ -1,6 +1,5 @@
 import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
-import emailjs from "@emailjs/browser";
 
 import { styles } from "../styles";
 import { EarthCanvas } from "./canvas";
@@ -8,60 +7,29 @@ import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
 
 const Contact = () => {
-  const formRef = useRef();
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
+  const [result, setResult] = React.useState("");
 
-  const [loading, setLoading] = useState(false);
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    setResult("Sending....");
+    const formData = new FormData(event.target);
 
-  const handleChange = (e) => {
-    const { target } = e;
-    const { name, value } = target;
+    formData.append("access_key", "c995e5b5-8ca8-47e4-aee1-9d4a0abf2cc3");
 
-    setForm({
-      ...form,
-      [name]: value,
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData
     });
-  };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setLoading(true);
+    const data = await response.json();
 
-    emailjs
-      .send(
-        import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
-        {
-          from_name: form.name,
-          to_name: "JavaScript Mastery",
-          from_email: form.email,
-          to_email: "sujata@jsmastery.pro",
-          message: form.message,
-        },
-        import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
-      )
-      .then(
-        () => {
-          setLoading(false);
-          alert("Thank you. I will get back to you as soon as possible.");
-
-          setForm({
-            name: "",
-            email: "",
-            message: "",
-          });
-        },
-        (error) => {
-          setLoading(false);
-          console.error(error);
-
-          alert("Ahh, something went wrong. Please try again.");
-        }
-      );
+    if (data.success) {
+      setResult("Form Submitted Successfully");
+      event.target.reset();
+    } else {
+      console.log("Error", data);
+      setResult(data.message);
+    }
   };
 
   return (
@@ -76,8 +44,7 @@ const Contact = () => {
         <h3 className={styles.sectionHeadText}>Contact.</h3>
 
         <form
-          ref={formRef}
-          onSubmit={handleSubmit}
+          onSubmit={onSubmit}
           className='mt-12 flex flex-col gap-8'
         >
           <label className='flex flex-col'>
@@ -85,9 +52,8 @@ const Contact = () => {
             <input
               type='text'
               name='name'
-              value={form.name}
-              onChange={handleChange}
               placeholder="What's your good name?"
+              required
               className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
             />
           </label>
@@ -96,9 +62,8 @@ const Contact = () => {
             <input
               type='email'
               name='email'
-              value={form.email}
-              onChange={handleChange}
               placeholder="What's your web address?"
+              required
               className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
             />
           </label>
@@ -107,9 +72,8 @@ const Contact = () => {
             <textarea
               rows={7}
               name='message'
-              value={form.message}
-              onChange={handleChange}
               placeholder='What you want to say?'
+              required
               className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
             />
           </label>
@@ -118,9 +82,11 @@ const Contact = () => {
             type='submit'
             className='bg-tertiary py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary'
           >
-            {loading ? "Sending..." : "Send"}
+            Send
           </button>
         </form>
+        <span>{result}</span>
+
       </motion.div>
 
       <motion.div
